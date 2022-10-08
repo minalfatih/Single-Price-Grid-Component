@@ -1,0 +1,130 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --Cyan: hsl(179, 62%, 43%);
+  --Bright-Yellow: hsl(71, 73%, 54%);
+  --Light-Gray: hsl(204, 43%, 93%);
+  --Grayish-Blue: hsl(218, 22%, 67%);
+}
+body {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: hsl(206deg 47% 93%);
+  font-size: 16px;
+  font-family: "Karla", sans-serif;
+}
+main {
+  display: grid;
+  grid-template-columns: 300px 300px;
+  grid-template-rows: auto auto;
+  grid-template-areas: "join join" " month why";
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 2px 9px 23px hsl(218deg 22% 67% / 59%);
+}
+main .box {
+  padding: 25px 30px;
+}
+
+main .box p {
+  line-height: 1.5;
+}
+main .join {
+  grid-area: join;
+  background-color: white;
+}
+main .join header h1 {
+  color: var(--Cyan);
+}
+main .join div h4 {
+  color: var(--Bright-Yellow);
+}
+main .join p {
+  color: var(--Grayish-Blue);
+}
+main .month {
+  grid-area: month;
+  background-color: var(--Cyan);
+}
+main .month .price {
+  font-size: 35px;
+  display: flex;
+  align-items: center;
+}
+main .month .price span {
+  font-weight: normal;
+  font-size: 16px;
+  opacity: 0.6;
+  margin-left: 15px;
+}
+main .month button {
+  color: var(--Light-Gray);
+  background-color: var(--Bright-Yellow);
+  border: none;
+  width: 100%;
+  padding: 15px 10px;
+  border-radius: 6px;
+  font-weight: 400;
+  margin-top: 4px;
+  box-shadow: 0px 0px 14px hsl(179deg 51% 37%);
+}
+main .why {
+  grid-area: why;
+  background-color: hsl(179deg 47% 52%);
+}
+main .why p {
+  max-width: 215px;
+}
+main header h1,
+h4,
+main .month .price {
+  font-weight: 700;
+}
+main .month header h1,
+main .month div h3,
+main .month .price,
+main .month p,
+main .why div h3,
+main .why p {
+  color: var(--Light-Gray);
+}
+footer {
+  margin-top: 10px;
+  font-size: 11px;
+  text-align: center;
+}
+footer a {
+  color: hsl(228, 45%, 44%);
+}
+@media (max-width: 375px) {
+  body {
+    position: initial;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  main {
+    grid-template-columns: 300px;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "join" " month" "why";
+  }
+  main .box {
+    padding: 22px;
+  }
+  main .join {
+    grid-area: join;
+  }
+  main .month {
+    grid-area: month;
+  }
+  main .why {
+    grid-area: why;
+  }
+}
