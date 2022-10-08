@@ -128,3 +128,33 @@ footer a {
     grid-area: why;
   }
 }
+@media (min-width: 376px) and (max-width: 770px) {
+  body {
+    position: initial;
+    top: 0;
+    left: 0;
+    transform: translate(0, 0);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+  main {
+    grid-template-columns: 300px;
+    grid-template-rows: auto auto auto;
+    grid-template-areas: "join" " month" "why";
+  }
+  main .box {
+    padding: 22px;
+  }
+  main .join {
+    grid-area: join;
+  }
+  main .month {
+    grid-area: month;
+  }
+  main .why {
+    grid-area: why;
+  }
+}
+
